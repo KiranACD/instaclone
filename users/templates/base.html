@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Instaclone
+        {% endblock %}
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico">
+    <script src="https://kit.fontawesome.com/fb81c0305.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div style="height: 40px; background-color: lightblue; text-align: center;">Header</div>
+
+    <main>
+        {% block content%}
+        {% endblock %}
+    </main>
+
+    <div style="height:40px; position:absolute; bottom: 8px; width: 100%;
+                background-color: lightyellow; text-align:center">
+                Footer
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Overpass+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+
+<div id="wrapper">
+    <div class="main-content">
+        <!-- <div class="header">
+            <img src="" alt="">
+        </div> -->
+        <div class="l-part">
+            <form action="/users/signup/" method="post">
+                {% csrf_token %}
+                {% for field in form.visible_fields %}
+                    <div class="input-labels">
+                        {{field.label}}
+                    </div>
+                    <div class="errors">
+                        {{field.errors}}
+                    </div>
+                    {{field}}
+                {% endfor %}
+                <input type="submit", value="Submit" class="btn">
+            </form>
+            <div id="success-message">
+                {% if message %}
+                    {{message}}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
